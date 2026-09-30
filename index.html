@@ -1,1 +1,346 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Ukraine GTA</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            UKRAINE <span>GTA</span>
+        </div>
+
+        <nav>
+            <button onclick="showPage('home')">Головна</button>
+            <button onclick="showPage('statistics')">Статистика</button>
+            <button onclick="showPage('users')">Гравці</button>
+            <button onclick="showPage('login')">Вхід</button>
+            <button onclick="showPage('register')">Реєстрація</button>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- ГОЛОВНА -->
+
+        <section id="home" class="page active">
+
+            <div class="hero">
+
+                <div class="hero-content">
+
+                    <div class="badge">
+                        UKRAINE GTA
+                    </div>
+
+                    <h1>
+                        ІГРОВИЙ<br>
+                        <span>ПОРТАЛ</span>
+                    </h1>
+
+                    <p>
+                        Статистика гравців, профілі та інша інформація
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <button
+                            class="gold-button"
+                            onclick="showPage('register')"
+                        >
+                            Створити акаунт
+                        </button>
+
+                        <button
+                            class="dark-button"
+                            onclick="showPage('statistics')"
+                        >
+                            Переглянути статистику
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- СТАТИСТИКА -->
+
+        <section id="statistics" class="page">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <span>UKRAINE GTA</span>
+
+                    <h2>Статистика</h2>
+
+                    <p>
+                        Загальна статистика порталу
+                    </p>
+
+                </div>
+
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            👥
+                        </div>
+
+                        <h3 id="totalUsers">
+                            0
+                        </h3>
+
+                        <p>
+                            Користувачів
+                        </p>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            🎮
+                        </div>
+
+                        <h3 id="totalPlayers">
+                            0
+                        </h3>
+
+                        <p>
+                            Гравців
+                        </p>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            📊
+                        </div>
+
+                        <h3 id="totalActions">
+                            0
+                        </h3>
+
+                        <p>
+                            Дій
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ГРАВЦІ -->
+
+        <section id="users" class="page">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <span>UKRAINE GTA</span>
+
+                    <h2>Гравці</h2>
+
+                    <p>
+                        Зареєстровані користувачі
+                    </p>
+
+                </div>
+
+
+                <div id="usersList">
+
+                    <div class="empty">
+                        Поки немає зареєстрованих користувачів.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ВХІД -->
+
+        <section id="login" class="page">
+
+            <div class="auth-wrapper">
+
+                <div class="auth-box">
+
+                    <div class="auth-title">
+
+                        <span>UKRAINE GTA</span>
+
+                        <h2>Вхід</h2>
+
+                        <p>
+                            Увійдіть до свого акаунта
+                        </p>
+
+                    </div>
+
+
+                    <input
+                        type="text"
+                        id="loginNickname"
+                        placeholder="Нікнейм"
+                    >
+
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Пароль"
+                    >
+
+
+                    <button
+                        class="gold-button full"
+                        onclick="login()"
+                    >
+                        Увійти
+                    </button>
+
+
+                    <p id="loginMessage" class="message"></p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- РЕЄСТРАЦІЯ -->
+
+        <section id="register" class="page">
+
+            <div class="auth-wrapper">
+
+                <div class="auth-box">
+
+                    <div class="auth-title">
+
+                        <span>UKRAINE GTA</span>
+
+                        <h2>Реєстрація</h2>
+
+                        <p>
+                            Створіть новий акаунт
+                        </p>
+
+                    </div>
+
+
+                    <input
+                        type="text"
+                        id="registerNickname"
+                        placeholder="Нікнейм"
+                    >
+
+
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        placeholder="Пароль"
+                    >
+
+
+                    <button
+                        class="gold-button full"
+                        onclick="register()"
+                    >
+                        Зареєструватися
+                    </button>
+
+
+                    <p id="registerMessage" class="message"></p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ПРОФІЛЬ -->
+
+        <section id="profile" class="page">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <span>UKRAINE GTA</span>
+
+                    <h2>Мій профіль</h2>
+
+                </div>
+
+
+                <div class="profile-card">
+
+                    <div class="profile-avatar">
+                        👤
+                    </div>
+
+                    <div>
+
+                        <h3 id="profileNickname">
+                            —
+                        </h3>
+
+                        <p>
+                            ID:
+                            <strong id="profileId">
+                                —
+                            </strong>
+                        </p>
+
+                        <p>
+                            Реєстрація:
+                            <strong id="profileCreated">
+                                —
+                            </strong>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
